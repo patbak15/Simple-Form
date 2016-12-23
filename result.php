@@ -135,7 +135,7 @@
 			<label for="image" class="col-sm-3 control-label">Image*</label>
 			<div class="col-sm-9">
 				<?php 
-					header('Content-Type: image/jpeg');
+					//header('Content-Type: image/jpeg');
 					$image = $_POST["address"];
 					echo $image; 
 				 ?> 
