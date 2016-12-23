@@ -32,6 +32,40 @@
 	<h2> Please record the problem by filling the form below </h2>
 </div>
 <br> 
+	<!-- split function to parse array-->
+	<script>
+		function getValues(){
+			var idx = document.URL.indexOf('?'); 
+			var values = new Array(); 
+			if(idx != -1){
+				var pairs = document.URL.substring(idx + 1, document.URL.length).split('&'); 
+				for(var i=0;i<pairs.length;i++){
+					name = pairs[i].split('='); 
+					values[name[0]] = name[1]; 
+				}
+			}
+			return values; 
+		}
+		values = getValues(); 
+        var firstname = decodeURI(params["firstName"]);
+        var replacedFirstName = firstname.replace(/%2D/g, "-");
+        var replacedFirstName = replacedFirstName.replace(/%2C/g, "'");
+        var replacedFirstName = replacedFirstName.split('+').join(' ');
+        var first = replacedFirstName; 
+		var last = values["lName"]; 
+		var gender = values["gender"]; 
+		var education = values["education"]; 
+		var phone = values["phone"]; 
+		var email = values["email"]; 
+		var street = values["address"]; 
+		var city = values["city"]; 
+		var state = values["state"]; 
+		var zip = values["zip"]; 
+		var catagory = values["catagory"]; 
+		var description = values["description"]; 
+		var image = values["image"]; 
+	</script>
+
 
 <div class="container">
 	<fieldset>
@@ -39,11 +73,11 @@
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<?php echo $_GET["fName"];	?>
+				<script>document.write(first);</script>
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
-				<?php echo $_GET["lName"]; ?> 
+				<script>document.write(last);</script>
 			</div>
 		</div> <!-- END NAME --> 
 
