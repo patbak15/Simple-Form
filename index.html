@@ -22,7 +22,7 @@
 			padding-left: 5em; 
 		}
 	</style>
-	
+
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
 	Patrick Aung, patbak15@mail.sfsu.edu </h1>
@@ -32,7 +32,7 @@
 </div>
 <br> 
 <div class="container">
-	<form  action="result.html" method="get" id="form_id" class="form-horizontal" data-toggle="validator" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+	<form  action="result.php" method="post" id="form_id" class="form-horizontal" data-toggle="validator" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 		<fieldset>
 		<legend>Personal Infomation</legend>
 		<h3> *required</h3>

@@ -22,12 +22,6 @@
 		}
 		
 	</style>
-	<script>
-		function getParameterByName(name) {
-    		var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    		return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-		}
-	</script>
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
 	Patrick Aung, patbak15@mail.sfsu.edu </h1>
@@ -45,14 +39,11 @@
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<script>
-						var name = getParamterByName("fName");
-						document.write(name); 
-				</script>
+				<?php echo $_POST["fName"]; ?> 
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
-				<script>document.write(last);</script>
+				<?php echo $_POST["lName"]; ?>
 			</div>
 		</div> <!-- END NAME --> 
 
