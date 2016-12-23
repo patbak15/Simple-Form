@@ -5,12 +5,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="validator.js"></script>
+
 <head>
 	<title>SFSU CS Department - CSC 642 Fall 2016 Project: Form UI
 	Patrick Aung, patbak15@mail.sfsu.edu </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	 <script src="http://code.jquery.com/jquery-1.5.js"></script>
-	
+	<script src="http://code.jquery.com/jquery-1.5.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
 	Patrick Aung, patbak15@mail.sfsu.edu </h1>
@@ -160,13 +162,9 @@
 				<div class="help-block with-errors"></div>
 			</p>
 		</div>
+		<!-- reCAPTCHA --> 
+		<div class="g-recaptcha" data-sitekey="6Lfoqg8UAAAAAL746lq-DtL5qS5S5B6D1BTdrV4d"></div>
 
-		<div align="center" class="col-sm-9"> 
-			<img src="captcha_code_file.php?rand=<?php echo rand(); ?>"
-			id="captchaimg" >
-			<label for="message">Enter the code above here :</label>
-			<input id="6_letters_code" name="6_letters_code" type="text">
-		</div>
 
 		</fieldset>
 	</form>
