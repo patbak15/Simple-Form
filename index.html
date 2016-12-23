@@ -12,7 +12,17 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	<script src="http://code.jquery.com/jquery-1.5.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
-
+	<style>
+		h1{
+			text-align: center
+		}
+		h3{
+			font-size: small;
+			text-align: left; 
+			padding-left: 5em; 
+		}
+		
+	</style>
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
 	Patrick Aung, patbak15@mail.sfsu.edu </h1>
@@ -22,19 +32,19 @@
 </div>
 <br> 
 <div class="container">
-	<form  class="form-horizontal" data-toggle="validator" role="form">
+	<form  action="verify.php" method="post" id="form_id" class="form-horizontal" data-toggle="validator" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 		<fieldset>
 		<legend>Personal Infomation</legend>
 		<h3> *required</h3>
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<input type="text" id="fName" placeholder="First Name" class="form-control" required>
+				<input type="text" name="fName" placeholder="First Name" class="form-control" required>
 				<div class="help-block with-errors"></div>
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
-				<input type="text" id="lName" placeholder="Last Name" class="form-control" required>
+				<input type="text" name="lName" placeholder="Last Name" class="form-control" required>
 				<div class="help-block with-errors"></div>
 			</div>
 		</div> <!-- END NAME --> 
@@ -74,7 +84,8 @@
        	<div class="form-group">
        		<label for="phone" class="col-sm-3 control-label">Phone*</label>
        		<div class="col-sm-9">
-       			<input type='tel' pattern='[\+]\d{1}[\(]\d{3}[\)]\d{3}[\-]\d{4}' title='Phone Number (Format: +1(999)999-9999)' required> 
+       			<input type='tel' id="phone" placeholder="(999)999-9999" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}' title='Phone Number (Format: (999)999-9999)' required> 
+       			<div>Format: (999)999-9999</div>
        			<div class="help-block with-errors"></div>
        		</div>
        	</div> <!--END PHONE --> 
@@ -86,20 +97,17 @@
        			<div class="help-block with-errors"></div>
        		</div>
        	</div> <!-- END EMAIL -->
-
 		</fieldset>
-	</form>
-</div>
-<br><br> 
-<div class="container">
-	<form  class="form-horizontal" data-toggle="validator" role="form">
-		<fieldset>
+
+		<!-- INCIDENT REPORT --> 
+		<div class="container"> 
+			<fieldset>
 		<legend>Incident Report</legend>
 		<h3> *required</h3>
 		<div class ="form-group">
 			<label for="date" class="col-sm-3 control-label">Date*</label>
 			<div class="col-sm-9">
-				<input type="date" name="date">
+				<input type="date" id="date" required>
 				<div class="help-block with-errors"></div>
 			</div>
 		</div> <!--END DATE -->
@@ -153,18 +161,29 @@
 		<div class= "form-group">
 			<label for="image" class="col-sm-3 control-label">Upload Image*</label>
 			<div class="col-sm-9">
-				<input type="file" name="image" accept="image/*">
+				<input type="file" id="image" name="image" accept="image/*">
 			</div>
 		</div> <!-- END IMAGE --> 
 
 		<div align= "center" class="col-sm-9">
 			<p> 
-				<input type="checkbox" required name="terms"> I Accept the <a href="terms.html">Terms and Conditions</a>
-				<div class="help-block with-errors"></div>
+				<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a href="terms.html">Terms and Conditions</a>
 			</p>
 		</div>
 		<!-- reCAPTCHA --> 
 		<div align= "center" class="g-recaptcha" data-sitekey="6Lfoqg8UAAAAAL746lq-DtL5qS5S5B6D1BTdrV4d"></div>
+		<input type="hidden" name="recaptcha" data-rule-recaptcha="true">
+		<script>
+			$('form').validate({
+  				ignore: '.no-validation'
+			});     
+
+			// Add our validation method for reCaptcha: 
+			$.validator.addMethod("recaptcha", function(value, element) {
+  				var grecaptcha = window.grecaptcha || null;
+  				return !grecaptcha || grecaptcha.getResponse();
+			}, "Please fill reCAPTCHA");
+		</script>
 		<br><br> 
 		</fieldset>
 		<div align="right" style="padding-right: 5em" margin-pa class="col-sm-9">
@@ -172,10 +191,7 @@
 		</div>
 	</form>
 
-
-
 </div>
-
 
 
 
