@@ -22,6 +22,19 @@
 		}
 		
 	</style>
+	<script>
+		function getParameterByName(name, url) {
+    		if (!url) {
+      			url = window.location.href;
+    		}
+    		name = name.replace(/[\[\]]/g, "\\$&");
+    		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        	results = regex.exec(url);
+    		if (!results) return null;
+    		if (!results[2]) return '';
+    		return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+	</script>
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
 	Patrick Aung, patbak15@mail.sfsu.edu </h1>
@@ -32,40 +45,6 @@
 	<h2> Please record the problem by filling the form below </h2>
 </div>
 <br> 
-	<!-- split function to parse array-->
-	<script>
-		function getValues(){
-			var idx = document.URL.indexOf('?'); 
-			var values = new Array(); 
-			if(idx != -1){
-				var pairs = document.URL.substring(idx + 1, document.URL.length).split('&'); 
-				for(var i=0;i<pairs.length;i++){
-					name = pairs[i].split('='); 
-					values[name[0]] = name[1]; 
-				}
-			}
-			return values; 
-		}
-		values = getValues(); 
-        var firstname = decodeURI(params["firstName"]);
-        var replacedFirstName = firstname.replace(/%2D/g, "-");
-        var replacedFirstName = replacedFirstName.replace(/%2C/g, "'");
-        var replacedFirstName = replacedFirstName.split('+').join(' ');
-        var first = replacedFirstName; 
-		var last = values["lName"]; 
-		var gender = values["gender"]; 
-		var education = values["education"]; 
-		var phone = values["phone"]; 
-		var email = values["email"]; 
-		var street = values["address"]; 
-		var city = values["city"]; 
-		var state = values["state"]; 
-		var zip = values["zip"]; 
-		var catagory = values["catagory"]; 
-		var description = values["description"]; 
-		var image = values["image"]; 
-	</script>
-
 
 <div class="container">
 	<fieldset>
@@ -73,7 +52,10 @@
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<script>document.write(first);</script>
+				<script>
+						var name= getParamterByName('fName');
+						document.write(name); 
+				</script>
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
