@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="validator.js"></script>
+<head>
+	<title>SFSU CS Department - CSC 642 Fall 2016 Project: Form UI
+	Patrick Aung, patbak15@mail.sfsu.edu </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	 <script src="http://code.jquery.com/jquery-1.5.js"></script>
+	
+</head>
+<h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
+	Patrick Aung, patbak15@mail.sfsu.edu </h1>
+<br> <br> 
+
+<h2> Please record the problem by filling the form below </h2>
+<br> 
+<div class="container">
+	<form  class="form-horizontal" data-toggle="validator" role="form">
+		<fieldset>
+		<legend>Personal Infomation</legend>
+		<h3> *required</h3>
+		<div class="form-group">
+			<label for="fName" class="col-sm-3 control-label">First Name*</label>
+			<div class="col-sm-9">
+				<input type="text" id="fName" placeholder="First Name" class="form-control" required>
+				<div class="help-block with-errors"></div>
+			</div>
+			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
+			<div class="col-sm-9">
+				<input type="text" id="lName" placeholder="Last Name" class="form-control" required>
+				<div class="help-block with-errors"></div>
+			</div>
+		</div> <!-- END NAME --> 
+		<div class="form-group">
+			<label class="control-label col-sm-3">Gender</label>
+			<div class="col-sm-6">
+				<div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                        	<input type="radio" id="gender" value="female">Female
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                        	<input type="radio" id="gender" value="male">Male
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                        	<input type="radio" id="gender" value="other">Other
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> <br><!--END GENDER -->
+       	<div class="form-group">
+       		<label for="education" class="col-sm-3 control-label">Education</label>
+       		<div class ="col-sm-9">
+       			<select id="education" class="form-control">
+       				<option>Highschool</option>
+       				<option>B.S.</option>
+       				<option>M.S.</option>
+       				<option>Ph.D</option>
+       			</select>
+       		</div>
+       	</div> <!-- END EDUCTION -->
+       	<div class="form-group">
+       		<label for="phone" class="col-sm-3 control-label">Phone*</label>
+       		<div class="col-sm-9">
+       			<input type='tel' pattern='[\+]\d{1}[\(]\d{3}[\)]\d{3}[\-]\d{4}' title='Phone Number (Format: +1(999)999-9999)' required> 
+       			<div class="help-block with-errors"></div>
+       		</div>
+       	</div> <!--END PHONE --> 
+
+       	<div class="form-group">
+       		<label for="email" class="col-sm-3 control-label">Email*</label>
+       		<div class="col-sm-9">
+       			<input type="email" id="email" placeholder="name@domain.com" class="form-control" required>
+       			<div class="help-block with-errors"></div>
+       		</div>
+       	</div> <!-- END EMAIL -->
+
+		</fieldset>
+	</form>
+</div>
+<br><br> 
+<div class="container">
+	<form  class="form-horizontal" data-toggle="validator" role="form">
+		<fieldset>
+		<legend>Incident Report</legend>
+		<h3> *required</h3>
+		<div class ="form-group">
+			<label for="date" class="col-sm-3 control-label">Date*</label>
+			<div class="col-sm-9">
+				<input type="date" name="date">
+				<div class="help-block with-errors"></div>
+			</div>
+		</div> <!--END DATE -->
+		<div class="form-group">
+			<h4>Location of Incident</h4>
+			<label for="address" class="col-sm-3 control-label">Address*</label>
+			<div class="col-sm-9">
+				<input name="address" placeholder="123 Street Ave" type="text" id="address" required>
+				<div class="help-block with-errors"></div>
+			</div>
+
+			<label for="city" class="col-sm-3 control-label">City/Town*</label>
+			<div class="col-sm-9">
+				<input id="city" name="city" type="text" placeholder="city" required>
+				<div class="help-block with-errors"></div>
+			</div>
+
+			<label for="state" class="col-sm-3 control-label">State*</label>
+			<div class="col-sm-9">
+				<input id="state" name="state" type="text" placeholder="State/Province/Region" required>
+				<div class="help-block with-errors"></div>
+			</div>
+
+			<label for="zip" class="col-sm-3 control-label">Zip*</label>
+			<div class="col-sm-9">
+				<input name="zip" placeholder="99999" type="text" id="zip" required>
+				<div class="help-block with-errors"></div>
+			</div>
+		</div> <!-- END LOCATION --> 
+
+		<div class="form-group">
+			<label for="catagory" class="col-sm-3 control-label">Catagory*</label>
+			<div class="col-sm-9">
+				<select id="catagory" class="selectpicker" multiple required>
+					<option>Spillage</option>
+					<option>Broken Pipe</option>
+					<option>Electric Hazard</option>
+					<option>Broken Pathway</option>
+					<option>Other</option>
+				</select>
+			</div>
+		</div> <!--END CATAGORY --> 
+
+		<div class="form-group">
+			<label for="description" class="col-sm-3 control-label">Description*</label>
+			<textarea maxlength="500" id="description" rows="5" style="width: 485px" required></textarea>
+			<p align="center">Limit is 500 characters</p>
+			<div align="center" class="help-block with-errors"></div>
+		</div>	<!--END DESCRIPTION --> 
+
+		<div class= "form-group">
+			<label for="image" class="col-sm-3 control-label">Upload Image*</label>
+			<div class="col-sm-9">
+				<input type="file" name="image" accept="image/*">
+			</div>
+		</div> <!-- END IMAGE --> 
+
+		<div align= "center" class="col-sm-9">
+			<p> 
+				<input type="checkbox" required name="terms"> I Accept the <a href="terms.html">Terms and Conditions</a>
+				<div class="help-block with-errors"></div>
+			</p>
+		</div>
+
+		<div align="center" class="col-sm-9"> 
+			<img src="captcha_code_file.php?rand=<?php echo rand(); ?>"
+			id="captchaimg" >
+			<label for="message">Enter the code above here :</label>
+			<input id="6_letters_code" name="6_letters_code" type="text">
+		</div>
+
+		</fieldset>
+	</form>
+
+
+
+</div>
+
+
+
+
+</html> 
