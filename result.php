@@ -41,11 +41,14 @@
 			<div class="col-sm-9">
 				<?php echo $_POST["fName"]; ?> 
 			</div>
+		</div>
+		<div class="row">
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
 				<?php echo $_POST["lName"]; ?>
 			</div>
-		</div> <!-- END NAME --> 
+		</div>
+		<!-- END NAME --> 
 
 
 
