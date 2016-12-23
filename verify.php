@@ -39,11 +39,11 @@
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<?php echo $_POST["fName"];	?>
+				<?php echo $_GET["fName"];	?>
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
 			<div class="col-sm-9">
-				<?php echo $_POST["lName"]; ?> 
+				<?php echo $_GET["lName"]; ?> 
 			</div>
 		</div> <!-- END NAME --> 
 
