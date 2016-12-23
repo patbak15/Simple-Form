@@ -36,7 +36,7 @@
 <div class="container">
 	<fieldset>
 		<legend>Personal Infomation</legend>
-		<div class="form-group">
+		<div class="row">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
 				<?php echo $_POST["fName"]; ?> 
