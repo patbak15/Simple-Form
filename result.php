@@ -184,7 +184,7 @@
 			<label for="image" class="col-sm-3 control-label">Image*</label>
 			<div class="col-sm-9">
 				<?php 
-					echo '<img src="'.$target_file."'/>"; 
+					echo '<img src="'.$target_file.'"/>"'; 
 				?>
 			</div>
 		</div>
