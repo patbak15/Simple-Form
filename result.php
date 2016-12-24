@@ -97,7 +97,7 @@
             <div id="map" style="width:400px;height:400px;background:white"></div>
            	</h5 style="text-align: right;">
         </div>
-        
+
 		<div class="row">
 			<label for="address" class="col-sm-3 control-label">Address*</label>
 			<div class="col-sm-9">
@@ -159,7 +159,11 @@
           center: {lat: -34.397, lng: 150.644}
         });
         var geocoder = new google.maps.Geocoder();
-        var address = <?php echo $_POST("address")?> + <?php echo $_POST("city")?> + <?php echo $_POST("state")?> + <?php echo $_POST("zip")?>;
+        var add = <?php echo $_POST("address")?> ; 
+        var city = <?php echo $_POST("city")?> ; 
+        var state = <?php echo $_POST("state")?>
+        var zip = <?php echo $_POST("zip")?>; 
+        var address = add + city + state + zip;
         geocodeAddress(geocoder, map, address)
       }
 
