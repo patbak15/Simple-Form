@@ -11,37 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	<script src="http://code.jquery.com/jquery-1.5.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: {lat: -34.397, lng: 150.644}
-        });
-        var geocoder = new google.maps.Geocoder();
-        var add = "<?php echo $_POST("address")?>"; 
-        var city = "<?php echo $_POST("city")?>" ; 
-        var state = "<?php echo $_POST("state")?>"; 
-        var zip = "<?php echo $_POST("zip")?>"; 
-        var address = add + city + state + zip;
-        geocodeAddress(geocoder, map, address)
-      }
-
-      function geocodeAddress(geocoder, resultsMap, address) {
-        geocoder.geocode({'address': address}, function(results, status) {
-          if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-              map: resultsMap,
-              position: results[0].geometry.location
-            });
-          } else {
-            alert('Geocode failed: ' + status);
-          }
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrg0KTWfsRW2DeofZi59g1Hh47Z3YqidE&callback=initMap" async defer>
-    </script>
 	<style>
 		h1{
 			text-align: center
@@ -51,6 +20,7 @@
 			text-align: left; 
 			padding-left: 5em; 
 		}
+		
 	</style>
 </head>
 <h1> SFSU CS Department - CSC 642 Fall 2016 Project: Form UI <br> 
@@ -183,4 +153,35 @@
 	</fieldset>
 </div>
 	<br><br>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+        var add = "<?php echo $_POST("address")?>"; 
+        var city = "<?php echo $_POST("city")?>" ; 
+        var state = "<?php echo $_POST("state")?>"; 
+        var zip = "<?php echo $_POST("zip")?>"; 
+        var address = add + city + state + zip;
+        geocodeAddress(geocoder, map, address)
+      }
+
+      function geocodeAddress(geocoder, resultsMap, address) {
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode failed: ' + status);
+          }
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrg0KTWfsRW2DeofZi59g1Hh47Z3YqidE&callback=initMap" async defer>
+    </script>
 </html> 
