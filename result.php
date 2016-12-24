@@ -138,13 +138,14 @@
 		<div class="row">
 			<label for="image" class="col-sm-3 control-label">Image*</label>
 			<div class="col-sm-9">
+				<img scr="
 				<?php
 					if (isset($_FILES['image'])) {
     					$aExtraInfo = getimagesize($_FILES['image']['tmp_name']);
     					$sImage = "data:" . $aExtraInfo["mime"] . ";base64," . base64_encode(file_get_contents($_FILES['image']['tmp_name']));
-    					echo '<img src="' . $sImage .'"/>'; 
+    					echo $sImage; 
     				}
-    			?>
+    			?>"/>
 			</div>
 		</div>
 
