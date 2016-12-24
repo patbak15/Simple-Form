@@ -159,10 +159,10 @@
           center: {lat: -34.397, lng: 150.644}
         });
         var geocoder = new google.maps.Geocoder();
-        var add = <?php echo $_POST("address")?> ; 
-        var city = <?php echo $_POST("city")?> ; 
-        var state = <?php echo $_POST("state")?>
-        var zip = <?php echo $_POST("zip")?>; 
+        var add = "<?php echo $_POST("address")?>" ; 
+        var city = "<?php echo $_POST("city")?>" ; 
+        var state = "<?php echo $_POST("state")?>"
+        var zip = "<?php echo $_POST("zip")?>"; 
         var address = add + city + state + zip;
         geocodeAddress(geocoder, map, address)
       }
