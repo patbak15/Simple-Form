@@ -29,7 +29,6 @@
 <div align="center">
 	<h2> VERIFICATION PAGE</h2>
 	<br>
-	<h2> Please record the problem by filling the form below </h2>
 </div>
 <br> 
 
