@@ -144,7 +144,7 @@
 			<div class="col-sm-9">
 				<?php 
 					//header('Content-Type: image/jpeg');
-					$image = $_POST["address"];
+					$image = $_POST["image"];
 					echo $image; 
 				 ?> 
 			</div>
