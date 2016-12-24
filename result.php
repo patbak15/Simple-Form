@@ -176,12 +176,12 @@
               position: results[0].geometry.location
             });
           } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            alert('Geocode failed: ' + status);
           }
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5UB-333Aqb-x4CWxmqShkuy91KzSRxSM&callback=initMap" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrg0KTWfsRW2DeofZi59g1Hh47Z3YqidE&callback=initMap" async defer>
     </script>
 
 </html> 
