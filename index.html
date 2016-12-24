@@ -5,7 +5,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="validator.js"></script>
-
 <head>
 	<title>SFSU CS Department - CSC 642 Fall 2016 Project: Form UI
 	Patrick Aung, patbak15@mail.sfsu.edu </title>
@@ -39,7 +38,7 @@
 		<div class="form-group">
 			<label for="fName" class="col-sm-3 control-label">First Name*</label>
 			<div class="col-sm-9">
-				<input type="text" name="fName" placeholder="First Name" class="form-control" required>
+				<input type="text"  name="fName" placeholder="First Name" class="form-control" required>
 				<div class="help-block with-errors"></div>
 			</div>
 			<label for="lName" class="col-sm-3 control-label">Last Name*</label>
@@ -103,8 +102,8 @@
 		<!-- INCIDENT REPORT --> 
 		<div class="container"> 
 			<fieldset>
-		<legend>Incident Report</legend>
-		<h3> *required</h3>
+			<legend>Incident Report</legend>
+			<h3> *required</h3>
 		<div class ="form-group">
 			<label for="date" class="col-sm-3 control-label">Date*</label>
 			<div class="col-sm-9">
@@ -115,7 +114,6 @@
 
 		<div class="form-group">
 			<h4>Location of Incident</h4>
-
 			<label for="address" class="col-sm-3 control-label">Address*</label>
 			<div class="col-sm-9">
 				<input name="address" placeholder="123 Street Ave" type="text" id="address" required>
@@ -129,7 +127,7 @@
 			</div>
 
 			<label for="state" class="col-sm-3 control-label">State*</label>
-			<div class="col-xs-9">
+			<div class="col-sm-9">
 				<select id= "state" name="state" class="selectpicker">
                     <option value="">Select a state</option>
                     <option value="AL">Alabama</option>
@@ -245,6 +243,7 @@
 		<div align="right" style="padding-right: 5em" margin-pa class="col-sm-9">
 			<button type="submit" class="btn btn-default">Submit</button>
 		</div>
+	</div>
 	</form>
 
 </div>
