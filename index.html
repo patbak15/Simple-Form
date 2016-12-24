@@ -74,6 +74,7 @@
        		<label for="education" class="col-sm-3 control-label">Education</label>
        		<div class ="col-sm-9">
        			<select id="education" name="eduction" class="form-control">
+       				<option>Highest Education</option>
        				<option>Highschool</option>
        				<option>B.S.</option>
        				<option>M.S.</option>
@@ -111,8 +112,10 @@
 				<div class="help-block with-errors"></div>
 			</div>
 		</div> <!--END DATE -->
+
 		<div class="form-group">
 			<h4>Location of Incident</h4>
+			<div>
 			<label for="address" class="col-sm-3 control-label">Address*</label>
 			<div class="col-sm-9">
 				<input name="address" placeholder="123 Street Ave" type="text" id="address" required>
@@ -126,8 +129,8 @@
 			</div>
 
 			<label for="state" class="col-sm-3 control-label">State*</label>
-			<div class="col-sm-9">
-				<select name="state" class="form-control">
+			<div class="col-xs-9">
+				<select id= "state" name="state" class="selectpicker">
                     <option value="">Select a state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -181,6 +184,7 @@
                 	<option value="WI">Wisconsin</option>
                 	<option value="WY">Wyoming</option>
                 </select>
+                <div class="help-block with-errors"></div>
 			</div>
 
 			<label for="zip" class="col-sm-3 control-label">Zip*</label>
