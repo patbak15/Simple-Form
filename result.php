@@ -91,6 +91,14 @@
 		</div>
 		<h4>Location of Incident</h4>
 		<div class="row">
+            <h5 style="text-align: right;" class="col-sm-3 control-h5 style="text-align: right;"">Google Maps</h5 style="text-align: right;">
+            <h5 style="text-align: left;" class="col-sm-3 control-h5 style="text-align: right;"">
+
+            <div id="map" style="width:400px;height:400px;background:white"></div>
+           	</h5 style="text-align: right;">
+        </div>
+        
+		<div class="row">
 			<label for="address" class="col-sm-3 control-label">Address*</label>
 			<div class="col-sm-9">
 				<?php echo $_POST["address"]; ?> 
@@ -144,6 +152,32 @@
 
 	</fieldset>
 </div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+        var address = <?php echo $_POST("address")?> + <?php echo $_POST("city")?> + <?php echo $_POST("state")?> + <?php echo $_POST("zip")?>;
+        geocodeAddress(geocoder, map, address)
+      }
 
+      function geocodeAddress(geocoder, resultsMap, address) {
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5UB-333Aqb-x4CWxmqShkuy91KzSRxSM&callback=initMap" async defer>
+    </script>
 
 </html> 
