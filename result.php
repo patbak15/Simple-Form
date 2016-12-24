@@ -91,11 +91,8 @@
 		</div>
 		<h4>Location of Incident</h4>
 		<div class="row">
-            <h5 style="text-align: right;" class="col-sm-3 control-h5 style="text-align: right;"">Google Maps</h5 style="text-align: right;">
-            <h5 style="text-align: left;" class="col-sm-3 control-h5 style="text-align: right;"">
-
-            <div id="map" style="width:400px;height:400px;background:white"></div>
-           	</h5 style="text-align: right;">
+           <label for="googlemap" class="col-sm-3 control-label">Google Maps</label>
+            <div id="map" style="width:300px;height:300px;background:grey"></div>
         </div>
 
 		<div class="row">
