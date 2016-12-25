@@ -215,12 +215,12 @@
 		<div class= "form-group">
 			<label for="image" class="col-sm-3 control-label">Upload Image*</label>
 			<div class="col-sm-9">
-				<input type="file" id="image" name="image" accept="image/*">
+				<input type="file" id="image-input" name="image" accept="image/*">
 			</div>
 		</div> <!-- END IMAGE --> 
 		<!--js to handle getting image to local storage and display in result-->
 		<script>
-		var input = document.getElementById('image'); 
+		var input = document.getElementById('image-input'); 
 		input.onchange = function(event){
 			var image = input.files[0]; 
 			if(image){
