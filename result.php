@@ -163,7 +163,7 @@
 
 		<div class="row">
 			<label for="image" class="col-sm-3 control-label">Image*</label>
-			<div class="col-sm-9">
+			<div style="width: 300px; height: 300px;" class="col-sm-9">
 				<img id="target" alt="submittedImage"/> 
 				<script>
 					document.getElementById('target').src = localStorage.getItem('image'); 
