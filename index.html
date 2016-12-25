@@ -20,6 +20,10 @@
 			text-align: left; 
 			padding-left: 5em; 
 		}
+		select{
+			height: 32px;
+		}
+
 	</style>
 
 </head>
@@ -84,7 +88,7 @@
        	<div class="form-group">
        		<label for="phone" class="col-sm-3 control-label">Phone*</label>
        		<div class="col-sm-9">
-       			<input type='tel' id="phone" name="phone" placeholder="(999)999-9999" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}' title='Phone Number (Format: (999)999-9999)' required> 
+       			<input type='tel' style="height: 32px" id="phone" name="phone" placeholder="(999)999-9999" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}' title='Phone Number (Format: (999)999-9999)' required> 
        			<div>Format: (999)999-9999</div>
        			<div class="help-block with-errors"></div>
        		</div>
@@ -107,7 +111,7 @@
 		<div class ="form-group">
 			<label for="date" class="col-sm-3 control-label">Date*</label>
 			<div class="col-sm-9">
-				<input type="date" name="date" id="date" required>
+				<input type="date" style="height: 32px" name="date" id="date" required>
 				<div class="help-block with-errors"></div>
 			</div>
 		</div> <!--END DATE -->
@@ -116,19 +120,19 @@
 			<h4>Location of Incident</h4>
 			<label for="address" class="col-sm-3 control-label">Address*</label>
 			<div class="col-sm-9">
-				<input name="address" placeholder="123 Street Ave" type="text" id="address" required>
+				<input name="address" style="height: 32px" placeholder="123 Street Ave" type="text" id="address" required>
 				<div class="help-block with-errors"></div>
 			</div>
 
 			<label for="city" class="col-sm-3 control-label">City/Town*</label>
 			<div class="col-sm-9">
-				<input id="city" name="city" type="text" placeholder="city" required>
+				<input id="city" name="city" style="height: 32px" type="text" placeholder="city" required>
 				<div class="help-block with-errors"></div>
 			</div>
 
 			<label for="state" class="col-sm-3 control-label">State*</label>
 			<div class="col-sm-9">
-				<select id= "state" name="state" class="selectpicker">
+				<select id= "state" name="state" style="height: 32px" class="selectpicker">
                     <option value="">Select a state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -187,7 +191,7 @@
 
 			<label for="zip" class="col-sm-3 control-label">Zip*</label>
 			<div class="col-sm-9">
-				<input name="zip" placeholder="99999" type="text" id="zip" required>
+				<input name="zip" placeholder="99999" style="height: 32px" type="text" id="zip" required>
 				<div class="help-block with-errors"></div>
 			</div>
 		</div> <!-- END LOCATION --> 
@@ -195,7 +199,7 @@
 		<div class="form-group">
 			<label for="catagory" class="col-sm-3 control-label">Catagory*</label>
 			<div class="col-sm-9">
-				<select id="catagory" name="catagory" class="selectpicker" multiple required>
+				<select id="catagory" name="catagory" style="height: 100px" class="selectpicker" multiple required>
 					<option>Spillage</option>
 					<option>Broken Pipe</option>
 					<option>Electric Hazard</option>
@@ -215,7 +219,7 @@
 		<div class= "form-group">
 			<label for="image" class="col-sm-3 control-label">Upload Image*</label>
 			<div class="col-sm-9">
-				<input type="file" id="image-input" name="image" accept="image/*">
+				<input type="file" style="height: 32px" id="image-input" name="image" accept="image/*">
 			</div>
 		</div> <!-- END IMAGE --> 
 		<!--js to handle getting image to local storage and display in result-->
