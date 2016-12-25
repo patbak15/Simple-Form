@@ -102,7 +102,6 @@
 				<?php echo $_POST["email"]; ?>
 			</div>
 		</div>
-
 	</fieldset>
 </div>
 

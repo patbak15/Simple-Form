@@ -226,7 +226,7 @@
 			if(image){
 				var reader = new FileReader(); 
 				reader.onloadend = function(){
-					localStorge.setItem('image', reader.result); 
+					localStorage.setItem('image', reader.result); 
 				}
 				reader.readAsDataURL(image); 
 			}
