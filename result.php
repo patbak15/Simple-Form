@@ -165,11 +165,14 @@
 		<div class="row">
 			<label for="image" class="col-sm-3 control-label">Image*</label>
 			<div class="col-sm-9">
-				<?php 
-					echo '<img src="images/'.$file_name.'"/>"'; 
-				?>
+				<img id="target" alt="submittedImage"/> 
+				<script>
+					document.getElementById('target').src = localStorage.getItem('image'); 
+				</script>
 			</div>
+			
 		</div>
+
 
 	</fieldset>
 </div>

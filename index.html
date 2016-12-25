@@ -218,6 +218,20 @@
 				<input type="file" id="image" name="image" accept="image/*">
 			</div>
 		</div> <!-- END IMAGE --> 
+		<!--js to handle getting image to local storage and display in result-->
+		<script>
+		var input = document.getElementById('image'); 
+		input.onchange = function(event){
+			var image = input.files[0]; 
+			if(image){
+				var reader = new FilReader(); 
+				reader.onloadend = function(){
+					localStorge.setItem('image', reader.result); 
+				}
+				reader.readAsDataURL(image); 
+			}
+		}; 
+		</script>
 
 		<div align= "center" class="col-sm-9">
 			<p> 
